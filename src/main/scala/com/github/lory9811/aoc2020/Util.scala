@@ -1,3 +1,5 @@
+package com.github.lory9811.aoc2020
+
 import scala.io.Source
 
 object Util {

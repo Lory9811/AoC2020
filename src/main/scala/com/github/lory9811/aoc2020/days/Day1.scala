@@ -1,3 +1,5 @@
+package com.github.lory9811.aoc2020.days
+
 object Day1 {
   val part1: List[String] => List[Int] = (input: List[String]) => {
     val numbers = input.map(_.toInt)
