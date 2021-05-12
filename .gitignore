@@ -1,0 +1,8 @@
+target
+.bsp
+.idea
+out
+*.class
+*.iml
+*.ipr
+*.iws
