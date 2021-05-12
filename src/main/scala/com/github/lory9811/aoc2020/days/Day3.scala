@@ -9,6 +9,10 @@ object Day3 extends Day {
     }
   }
 
+  private object Vector2 {
+    def apply(ints: (Int, Int)): Vector2 = new Vector2(ints._1, ints._2)
+  }
+
   private class Map(mapData: Set[(Int, Int)], dimensions: Vector2) {
     def testCollision(position: Vector2): Boolean = {
       mapData.contains((position.x % dimensions.x, position.y))
@@ -29,10 +33,8 @@ object Day3 extends Day {
     )
   }
 
-  override def part1(input: List[String]): Int = {
-    val slope = new Vector2(3, 1)
-    val map = Map(input)
-    var currentPos = new Vector2(0, 0)
+  private def getCollisions(start: Vector2, slope: Vector2, map: Map): Int = {
+    var currentPos = start
     var collisions = 0
     while (currentPos.y < map.height) {
       if (map.testCollision(currentPos)) collisions += 1
@@ -41,5 +43,15 @@ object Day3 extends Day {
     collisions
   }
 
-  override def part2(input: List[String]): Int = 0
+  override def part1(input: List[String]): Int = {
+    val slope = new Vector2(3, 1)
+    val map = Map(input)
+    getCollisions(new Vector2(0, 0), slope, map)
+  }
+
+  override def part2(input: List[String]): Int = {
+    val slopes = Set((1, 1), (3, 1), (5, 1), (7, 1), (1, 2)).map(Vector2(_))
+    val map = Map(input)
+    (for (slope <- slopes) yield getCollisions(new Vector2(0, 0), slope, map)).product
+  }
 }
