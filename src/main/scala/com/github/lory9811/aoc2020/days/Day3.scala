@@ -4,9 +4,7 @@ object Day3 extends Day {
   override val inputIndex: Int = 3
 
   private case class Vector2(var x: Int, var y: Int) {
-    def +(other: Vector2): Vector2 = {
-      Vector2(x + other.x, y + other.y)
-    }
+    def +(other: Vector2): Vector2 = Vector2(x + other.x, y + other.y)
   }
 
   private object Vector2 {
@@ -14,9 +12,7 @@ object Day3 extends Day {
   }
 
   private class Map(mapData: Set[Vector2], dimensions: Vector2) {
-    def testCollision(position: Vector2): Boolean = {
-      mapData.contains(Vector2(position.x % dimensions.x, position.y))
-    }
+    def testCollision(position: Vector2): Boolean = mapData.contains(Vector2(position.x % dimensions.x, position.y))
 
     def width: Int = dimensions.x
     def height: Int = dimensions.y
