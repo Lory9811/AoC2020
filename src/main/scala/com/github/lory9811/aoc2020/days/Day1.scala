@@ -21,8 +21,4 @@ object Day1 extends Day {
       if x + y + z == 2020
     } yield x * y * z).head
   }
-
-  override def execute(input: List[String]): (Int, Int) = {
-    (part1(input), part2(input))
-  }
 }

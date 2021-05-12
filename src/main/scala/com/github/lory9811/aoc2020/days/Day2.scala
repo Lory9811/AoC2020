@@ -30,8 +30,4 @@ object Day2 extends Day {
   override def part2(input: List[String]): Int = {
     input.map(validatePassword2).count(_ == true)
   }
-
-  override def execute(input: List[String]): (Int, Int) = {
-    (part1(input), part2(input))
-  }
 }
