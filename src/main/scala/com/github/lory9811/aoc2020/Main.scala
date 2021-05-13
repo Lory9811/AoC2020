@@ -1,13 +1,14 @@
 package com.github.lory9811.aoc2020
 
-import com.github.lory9811.aoc2020.days.{Day1, Day2, Day3, Day4}
+import com.github.lory9811.aoc2020.days.{Day1, Day2, Day3, Day4, Day5}
 
 object Main extends App {
   val days = List(
     Day1,
     Day2,
     Day3,
-    Day4
+    Day4,
+    Day5
   )
 
   for (day <- days) {
