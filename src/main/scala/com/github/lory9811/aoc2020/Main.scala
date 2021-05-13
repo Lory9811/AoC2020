@@ -1,6 +1,6 @@
 package com.github.lory9811.aoc2020
 
-import com.github.lory9811.aoc2020.days.{Day1, Day2, Day3, Day4, Day5, Day6}
+import com.github.lory9811.aoc2020.days.{Day1, Day2, Day3, Day4, Day5, Day6, Day8}
 
 object Main extends App {
   val days = List(
@@ -9,7 +9,8 @@ object Main extends App {
     Day3,
     Day4,
     Day5,
-    Day6
+    Day6,
+    Day8
   )
 
   for (day <- days) {
